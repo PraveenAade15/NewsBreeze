@@ -7,7 +7,7 @@ import com.example.newsbreeze.data.model.Article
 @Dao
 interface ArticleDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend  fun Insert(articleDao: ArticleDao):Long
+    suspend fun Insert(article: Article):Long
     @Delete
     suspend fun deleteArticle(article: Article)
     @Query("SELECT *FROM articles")

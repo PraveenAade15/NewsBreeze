@@ -12,8 +12,6 @@ data class Article(
     @PrimaryKey(autoGenerate = true)
     var id:Int?=null,
 
-
-
     @SerializedName("author")
     val author: String,
     @SerializedName("content")
@@ -30,4 +28,4 @@ data class Article(
     val url: String,
     @SerializedName("urlToImage")
     val urlToImage: String
-):Serializable
+) : Serializable

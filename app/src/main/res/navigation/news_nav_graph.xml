@@ -1,39 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/news_nav_graph"
+
     app:startDestination="@id/breakingNews">
+
 
     <fragment
         android:id="@+id/breakingNews"
         android:name="com.example.newsbreeze.ui.BreakingNews"
-        android:label="fragment_breaking_news"
-        tools:layout="@layout/fragment_breaking_news" >
+        android:label="BreakingNews" >
         <action
             android:id="@+id/action_breakingNews_to_articleWebview"
-            app:destination="@id/articleWebview"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"
-            />
+            app:destination="@id/articleWebview" />
         <action
             android:id="@+id/action_breakingNews_to_savedNews"
-            app:destination="@id/savedNews"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
+            app:destination="@id/savedNews" />
+    </fragment>
+    <fragment
+        android:id="@+id/articleWebview"
+        android:name="com.example.newsbreeze.ui.ArticleWebview"
+        android:label="fragment_article_webview"
+        tools:layout="@layout/fragment_article_webview" >
+        <argument
+            android:name="article"
+            app:argType="com.example.newsbreeze.data.model.Article" />
     </fragment>
     <fragment
         android:id="@+id/savedNews"
         android:name="com.example.newsbreeze.ui.SavedNews"
         android:label="fragment_saved_news"
         tools:layout="@layout/fragment_saved_news" />
-    <fragment
-        android:id="@+id/articleWebview"
-        android:name="com.example.newsbreeze.ui.ArticleWebview"
-        android:label="fragment_article_webview"
-        tools:layout="@layout/fragment_article_webview" />
 </navigation>
